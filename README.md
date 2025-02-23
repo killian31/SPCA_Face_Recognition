@@ -18,20 +18,20 @@ Sparse Principal Component Analysis (Sparse PCA) is an advanced machine learning
 
 Sparse PCA minimizes the reconstruction error with sparsity constraints on the principal components. The optimization problem can be formulated as:
 
-\[
-\min_{W, H} \|X - W H^T\|_F^2 + \alpha \|H\|_1 + \beta \|H\|_2^2
-\]
+$$
+\min_{W, H} \left\Vert X - W H^T \right\Vert_F^2 + \alpha \left\Vert H \right\Vert_1 + \beta \left\Vert H\right\Vert_2^2
+$$
 
 Where:
-- \( X \): Input data matrix.
-- \( W \): Principal components matrix.
-- \( H \): Sparse loadings matrix.
-- \( \alpha \): Controls sparsity (L1 regularization).
-- \( \beta \): Controls smoothness (L2 regularization).
+- $X$: Input data matrix.
+- $W$: Principal components matrix.
+- $H$: Sparse loadings matrix.
+- $\alpha$: Controls sparsity (L1 regularization).
+- $\beta$: Controls smoothness (L2 regularization).
 
 The algorithm alternates between:
-1. Fixing \( H \) to optimize \( W \).
-2. Fixing \( W \) to optimize \( H \) using Elastic Net regularization.
+1. Fixing $H$ to optimize $W$.
+2. Fixing $W$ to optimize $H$ using Elastic Net regularization.
 
 ---
 
@@ -75,8 +75,7 @@ X_transformed = model.transform(X)
 # Get the components
 components = model.components_
 
-print("Sparse Components:
-", components)
+print("Sparse Components:", components)
 ```
 
 ---
